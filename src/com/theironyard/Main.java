@@ -8,7 +8,7 @@ public class Main {
         Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
         Team<FootballPlayer> melbourne = new Team<>("Melbourne");
         Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
-        Team<FootballPlayer>fremantle = new Team<>("Freemantle");
+        Team<FootballPlayer> fremantle = new Team<>("Fremantle");
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
 
         hawthorn.matchResult(fremantle, 1, 0);
@@ -22,6 +22,20 @@ public class Main {
         footballLeague.add(fremantle);
 
         footballLeague.showLeagueTable();
+
+        BaseballPlayer pat = new BaseballPlayer("Pat");
+        SoccerPlayer beckham = new SoccerPlayer("Beckham");
+
+        Team rawTeam = new Team("Raw Team");
+        rawTeam.addPlayer(beckham);
+        rawTeam.addPlayer(pat);
+
+        footballLeague.add(rawTeam);
+
+        League<Team> rawLeague = new League<>("Raw");
+        rawLeague.add(adelaideCrows);
+        rawLeague.add(baseballTeam);
+        rawLeague.add(rawTeam);
 
 
     }
